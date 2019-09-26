@@ -1,0 +1,25 @@
+server:
+  port: 8802
+# eureka client configure
+eureka:
+  client:
+    service-url:
+      default-zone: http://127.0.0.1:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      my: This service is used movie ticket,you know,this is a micro service.
+spring:
+  # application name
+  application:
+    name: movie-service-ticket
+
+# actuator
+management:
+  endpoint:
+    health:
+      show-details: always
+# feign logger
+logging:
+  level:
+    com.joy.movieserviceticketfeignlogging.feign.UserFeignClient: DEBUG
